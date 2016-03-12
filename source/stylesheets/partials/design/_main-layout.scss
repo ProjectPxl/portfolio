@@ -1,0 +1,70 @@
+.main-content__wrapper{
+  padding-top: 20px;
+  display: block;
+  position: relative;
+  height: 100%;
+
+  padding-bottom: 40px;
+
+  text-align: center;
+  @include breakpoint($breakpoint-md){
+    text-align:left;
+  }
+}
+
+.portfolio{
+  margin-bottom: 20px;
+}
+
+.portfolio__item,
+.open-source__item{
+  position: relative;
+  margin-bottom: 15px;
+
+  @include breakpoint($breakpoint-md){
+    margin-bottom: 0;
+    border:5px solid #ccc;
+  }
+
+  .on-hover{
+    position: absolute;
+    top:0;right:0;left:0;bottom:0;
+    background-color: rgba(#0f8ed7, .9);
+    max-height:0;
+    transition: max-height 0.4s ease-in;
+    text-align: center;
+
+    display: none;
+    @include breakpoint($breakpoint-md){
+      display: block;
+    }
+  }
+
+  .hover__item{
+    color: #fff;
+    position: absolute;
+    bottom: 14%;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    display: none;
+  }
+
+  &:hover{
+    @include breakpoint($breakpoint-md){
+      border-color:darken(#ccc, 50%);  
+      .on-hover{
+        max-height:405px;
+      }
+      .hover__item{
+        display: inline-block;
+      }
+    }
+
+  }
+}
+
+.propane-ref{
+  font-size:11px;
+  padding-left: 10px;
+}

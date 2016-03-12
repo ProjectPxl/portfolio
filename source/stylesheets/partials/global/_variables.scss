@@ -1,0 +1,29 @@
+////////////////////////
+// Variables Partials
+//
+// All of your variables should go in this file.
+////////////////////////
+
+/*------------------------------------*\
+    $Breakpoint Settings
+\*------------------------------------*/
+
+$breakpoint-default-media: 'all';
+$breakpoint-default-feature: 'min-width';
+$breakpoint-default-pair: 'width';
+$breakpoint-to-ems: true; //false is default
+
+//Declare breakpoint values here
+$breakpoint-px-val--sm: 600px;
+$breakpoint-px-val--md: 601px;
+$breakpoint-px-val--lg: 960px;
+
+//Breakpoint mixin variables:
+$breakpoint-sm: max-width $breakpoint-px-val--sm; //converted to ems automagically
+$breakpoint-md: min-width $breakpoint-px-val--md; //converted to ems automagically
+$breakpoint-lg: min-width $breakpoint-px-val--lg; //converted to ems automagically
+
+/*------------------------------------*\
+    $Colors
+\*------------------------------------*/
+$blue: #0f8ed7;

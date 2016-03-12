@@ -1,0 +1,125 @@
+////////////////////////
+// Mixins Partials
+//
+// All of your mixins should go in this file.
+////////////////////////
+
+/*------------------------------------*\
+    $Px to Rems
+\*------------------------------------*/
+   
+// Example:
+//
+// Default:
+// @include font-size(18px);
+//
+// or if you need !important:
+// @include font-size(18px, !important);
+//
+// Will turn px values into rems, with px fallback for older browsers
+
+@mixin font-size( $px-size, $important: null ) {
+  $base-font-multiplier: 1;
+  $stripped: $px-size / ($px-size * 0 + 1); // strip 'px'
+  @if $important { font-size: $stripped * $base-font-multiplier * 1px $important; font-size: $stripped / 16 * 1rem $important; }
+  @else { font-size: $stripped * $base-font-multiplier * 1px; font-size: $stripped / 16 * 1rem; }
+}
+
+/*------------------------------------*\
+    $Opacity
+\*------------------------------------*/
+////////////////////////
+//
+//  Usage:
+//
+//    .article-heading {
+//      @include opacity(0.8);
+//    }
+//
+////////////////////////
+
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+/*------------------------------------*\
+    $Text Overflow
+\*------------------------------------*/
+////////////////////////
+//
+//  Usage:
+//  An easy way to truncate text with an ellipsis.
+//  Requires the element to be block or inline-block.
+//
+//    .text-truncate {
+//      @include text-truncate;
+//     }
+//
+////////////////////////
+
+@mixin text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/*------------------------------------*\
+    $Margin for Mobile
+\*------------------------------------*/
+
+@mixin reset-margins{
+  margin-left: -$grid-padding;
+  margin-right: -$grid-padding;
+  padding: 0 $grid-padding;
+}
+
+
+/*------------------------------------*\
+    $Visually Hidden
+\*------------------------------------*/
+////////////////////////
+//
+//  Sass can not extend classes /
+//  outer selectors from within @media breakpoints
+//  so we duplicate the class as a mixin
+//
+////////////////////////
+
+@mixin visuallyhidden{
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+/*------------------------------------*\
+    $Vertical-align Anything
+\*------------------------------------*/
+////////////////////////
+//
+// Also an extendable class (%vertical-align) --
+// try and use instead to reduce code bloat
+//
+// Mixin usage:
+//
+// .element{
+//   @include vertical-align;
+// }
+//
+// http://goo.gl/2MJm56
+//
+////////////////////////
+
+@mixin vertical-align {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}

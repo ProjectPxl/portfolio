@@ -1,0 +1,57 @@
+////////////////////////
+//
+// Structure
+//
+////////////////////////
+
+/**
+ * Box-model declarations,
+ * div structure,
+ * column breakdowns, etc.
+ */
+.bio__wrapper{
+  width: 100%;
+  position: relative;
+
+  @include breakpoint($breakpoint-md){
+  }
+
+  @include breakpoint($breakpoint-lg){
+    @include span-columns(4,12);
+  }
+
+}
+
+.main-content__wrapper{
+  @include container;
+  width: 100%;
+  @include breakpoint($breakpoint-lg){
+    @include span-columns(8 omega,12);
+  }
+
+  .portfolio__item,
+  .open-source__item{
+    width: 100%;
+    float: left;
+
+    @include breakpoint($breakpoint-md){
+      @include span-columns(3,9);
+    }
+
+    @include breakpoint($breakpoint-lg){
+      @include span-columns(4,12);
+    }
+
+    &.last{
+      @include omega;
+    }
+  }
+
+  .headline{
+    width: 100%;
+  }
+}
+
+.blog__item{
+  @include span-columns(4,12);
+}

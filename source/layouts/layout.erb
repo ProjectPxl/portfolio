@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <!-- Always force latest IE rendering engine or request Chrome Frame -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, width=device-width">
+
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <title><%= current_page.data.title || "Paul Maltsev" %></title>
+
+    <%= favicon_tag 'images/me.png' %>
+    <%= stylesheet_link_tag "normalize", "main" %>
+    <link href='http://fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <!-- <%= javascript_include_tag  "all" %> -->
+  </head>
+
+  <body class="<%= page_classes %>">
+    <section>
+      <div class="clearfix">
+
+        <div class="bio__wrapper">
+          <div class="bg-orvelay"></div>
+          <div class="bio--photo">
+            <%= image_tag "images/me.png"%>
+          </div>
+          <div class="bio--desc">
+            <p class="copy">
+              Hi! I'm Paul. <br>
+              I build web apps, practise Muay Thai & enjoy Physics.
+            </p>
+            <div class="bio--social">            
+              <a target="_blank" href="https://github.com/ProjectPxl"><div class="icon github"></div></a>
+              <a target="_blank" href="https://twitter.com/projectpxl"><div class="icon twitter"></div></a>
+              <a target="_blank" href="https://www.facebook.com/Maltsevp"><div class="icon facebook"></div></a>
+            </div>
+          </div>
+          <p class="footer--text"><a href="mailto:maltsevp@gmail.com">Speak to me</a> in Russian, Greek or English</p>
+        </div>
+
+        <div class="main-content__wrapper">
+          <div class="grid-construct">
+            <%= yield %>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </body>
+</html>

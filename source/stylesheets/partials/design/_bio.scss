@@ -1,0 +1,63 @@
+.bio__wrapper{
+  display: table;
+  text-align: center;
+  overflow: hidden;
+  height: 300px;
+  color: #fff;
+  z-index: 0;
+
+  @include breakpoint($breakpoint-md){
+    height: 400px;
+  }
+
+  @include breakpoint($breakpoint-lg){
+    position: fixed;
+    height: 100%;
+  }
+
+  background-image: url("http://i.imgur.com/7rPKEcj.jpg");
+  @include background-size(cover);
+
+  .bg-orvelay{
+    position: absolute;
+    top:0; left:0; right:0; bottom:0;
+    background-color: rgba(black, .7);
+    z-index: -1;
+  }
+
+  .bio--photo{
+    margin-top:50px;
+    margin-bottom: 20px;
+  }
+
+  .bio--social{
+    margin-bottom: 10px;
+  }
+
+  .bio--desc{
+    padding: 0 48px;
+  }
+
+  .copy{
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .icon.twitter{
+    margin: 0 5px;
+  }
+
+  .footer--text{
+    display: inline-block;
+    bottom: 20px;
+    left:0; right:0;
+
+    padding: 20px 0;
+    @include breakpoint($breakpoint-lg){
+      padding: 0;
+      position: absolute;
+    }
+
+  }
+}

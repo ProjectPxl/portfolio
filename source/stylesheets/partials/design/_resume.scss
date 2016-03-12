@@ -1,0 +1,29 @@
+.resume{
+  text-align: left;
+}
+
+.pad-top{
+  padding-top: 20px;
+}
+
+.tech-skills__item,
+.pro-experience__sub-item{
+  padding-left: 10px;
+  padding-bottom: 5px;
+}
+
+.pro-experience__sub-item{
+  list-style-type: disc;
+  list-style-position: inside;
+}
+
+.pro-experience__item{
+  margin-bottom: 20px;
+}
+
+.section-heading{
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #0f8ed7;
+}

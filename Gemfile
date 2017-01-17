@@ -16,3 +16,4 @@ gem "tzinfo-data", platforms: [:mswin, :mingw, :jruby]
 gem 'compass'
 gem 'susy'
 gem 'breakpoint'
+gem 'git'

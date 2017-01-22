@@ -17,3 +17,5 @@ gem 'compass'
 gem 'susy'
 gem 'breakpoint'
 gem 'git'
+
+gem 'middleman-google-analytics', '~> 3.0'

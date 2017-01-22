@@ -3,6 +3,13 @@
 ###
 require 'susy'
 activate :directory_indexes
+
+activate :google_analytics do |ga|
+  ga.tracking_id = 'UA-90714530-1'
+  ga.domain_name = 'paulmaltsev.net'
+end
+
+
 # Change Compass configuration
 # compass_config do |config|
 #   config.output_style = :compact
